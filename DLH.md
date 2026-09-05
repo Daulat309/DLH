@@ -104,3 +104,59 @@ the operation must be completed consistently before proceeding to the next opera
 ### Key Point
 - Synchronous Communication = Blocking Call
 - The caller sends a request and waits until it receives the response.
+
+
+# Lect22
+# Message-Based Communication — Short Revision Notes
+
+## 1. Message-Based Communication
+
+- Client sends a **request in the form of a message**.
+- Client receives the **response in the form of a message**.
+- It is generally **asynchronous**.
+- Client is **not required to halt/wait** for the process to complete.
+
+## 2. Key Components
+
+- **Producer** → Produces/sends messages.
+- **Consumer** → Receives/consumes messages.
+- **Agent** → Acts as an intermediary to manage/deliver messages.
+
+## 3. P2P Model
+
+- **P2P (Peer-to-Peer)** communication allows peers to communicate directly.
+- A peer can act as both **Producer and Consumer**.
+- There is no central message broker necessarily required.
+
+### Flow
+
+`Producer/Peer ↔ Consumer/Peer`
+
+## 4. Publish-Subscribe Model
+
+- **Publisher** publishes messages to a **topic/channel**.
+- **Subscribers** subscribe to topics they are interested in.
+- A message can be delivered to **multiple subscribers**.
+- Publisher does not need to know individual subscribers.
+
+### Flow
+
+`Publisher → Topic → Multiple Subscribers`
+
+## 5. Examples
+
+- **Apache Kafka**
+- **RabbitMQ**
+
+## Quick Comparison
+
+| Model | Communication |
+|---|---|
+| **P2P** | Peer ↔ Peer |
+| **Publish-Subscribe** | Publisher → Topic → Subscribers |
+
+## Remember
+
+> **P2P = Direct peer communication**  
+> **Pub-Sub = Publish once, deliver to interested subscribers**  
+> **Message-Based = Communication through messages, generally asynchronously**
